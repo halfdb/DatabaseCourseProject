@@ -1,0 +1,47 @@
+﻿<%@ Master MasterPageFile="~/Banner.Master" Language="C#" AutoEventWireup="true" CodeBehind="Management.master.cs" Inherits="DatabaseCourseProject.Management" %>
+
+<asp:Content runat="server" ContentPlaceHolderID="head">
+    <script>
+        function settab(selector) {
+            $(selector).addClass('active').attr('href', '#');
+        }
+        $(function () {
+            $('table:first').addClass("table table-sm table-bordered table-hover");
+            $('table:first input[type=button]').addClass("btn btn-sm btn-secondary");
+            $('table:first input[type=submit]').addClass("btn btn-sm btn-secondary");
+            $('table:first a').addClass("btn btn-sm btn-secondary");
+            $('table:even a').removeClass();
+        });
+    </script>
+    <asp:ContentPlaceHolder runat="server" ID="head" ></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content runat="server" ContentPlaceHolderID="content">
+    <ul class="nav nav-tabs" id="navtab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link" href="Goods.aspx" role="tab" id="goods_tab">商品</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="User.aspx" role="tab" id="user_tab">用户</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="Category.aspx" role="tab" id="category_tab">类别</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="Goods_Category.aspx" role="tab" id="goods_category_tab">商品与类别</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="Cart.aspx" role="tab" id="cart_tab">购物车</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="Order.aspx" role="tab" id="order_tab">订单</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="Suborder.aspx" role="tab" id="suborder_tab">子订单</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="Comment.aspx" role="tab" id="comment_tab">评论</a>
+        </li>
+    </ul>
+    <asp:ContentPlaceHolder runat="server" ID="managingTable"></asp:ContentPlaceHolder>
+
+</asp:Content>
